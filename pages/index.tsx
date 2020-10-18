@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData, PostDataPreview } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date/date';
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout/layout";
+import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData, PostDataPreview } from "../lib/posts";
+import Link from "next/link";
+import Date from "../components/date/date";
 
 interface Props {
   allPostsData: PostDataPreview[];

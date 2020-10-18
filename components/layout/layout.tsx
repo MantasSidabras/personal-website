@@ -1,23 +1,26 @@
-import Head from 'next/head';
-import styles from './layout.module.css';
-import utilStyles from '../../styles/utils.module.css';
-import Link from 'next/link';
-import {FC} from 'react';
+import Head from "next/head";
+import styles from "./layout.module.css";
+import utilStyles from "../../styles/utils.module.css";
+import Link from "next/link";
+import { FC } from "react";
 
-const name = 'Mantas';
-export const siteTitle = 'Next.js Sample Website';
+const name = "Mantas";
+export const siteTitle = "Next.js Sample Website";
 
 interface Props {
   children: React.ReactNode;
   home?: boolean;
 }
 
-const Layout: FC = ({ children, home }: Props) => {
+const Layout: FC<Props> = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Learn how to build a personal website using Next.js" />
+        <meta
+          name="description"
+          content="Learn how to build a personal website using Next.js"
+        />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -30,14 +33,22 @@ const Layout: FC = ({ children, home }: Props) => {
       <header className={styles.header}>
         {home ? (
           <>
-            <img src="/images/profile.png" className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} alt={name} />
+            <img
+              src="/images/profile.png"
+              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              alt={name}
+            />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <img src="/images/profile.png" className={`${styles.headerImage} ${utilStyles.borderCircle}`} alt={name} />
+                <img
+                  src="/images/profile.png"
+                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                  alt={name}
+                />
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
@@ -58,6 +69,6 @@ const Layout: FC = ({ children, home }: Props) => {
       )}
     </div>
   );
-}
+};
 
 export default Layout;

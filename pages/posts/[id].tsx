@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date/date';
 import utilStyles from '../../styles/utils.module.css';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { FC } from 'react';
 
 interface PostData {
   id: string;
@@ -16,7 +17,7 @@ interface Props {
   postData: PostData;
 }
 
-export default function Post({ postData }: Props) {
+const Post: FC<Props> = ({ postData }) => {
   return (
     <Layout>
       <Head>
@@ -49,3 +50,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   };
 };
+
+export default Post;
