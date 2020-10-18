@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link';
+import {FC} from 'react';
 
 const name = 'Mantas';
 export const siteTitle = 'Next.js Sample Website';
@@ -11,7 +12,7 @@ interface Props {
   home?: boolean;
 }
 
-export default function Layout({ children, home }: Props) {
+const Layout: FC = ({ children, home }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -58,3 +59,5 @@ export default function Layout({ children, home }: Props) {
     </div>
   );
 }
+
+export default Layout;
